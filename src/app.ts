@@ -15,6 +15,9 @@ import db from "../config/db";
 //Routes
 import router from "./router";
 
+//Logger
+import Logger from "../config/logger";
+
 app.use("/api", router);
 
 //app port
@@ -24,5 +27,5 @@ app.listen(port, async () => {
 
     await db();
 
-    console.log(`Aplicação está funcionando na porta: ${port}`);
+    Logger.info(`Aplicação está funcionando na porta: ${port}`);
 });
