@@ -18,7 +18,13 @@ export const movieCreateValidations = () => {
             }),
         body("description")
             .isString()
-            .withMessage("A descrição é obrogatória!")
+            .withMessage("A descrição é obrogatória!"),
+        body("director")
+            .isString()
+            .withMessage("O nome do Diretor é obrigatório."),
+        body("poster")
+            .isURL()
+            .withMessage("A imagem precisa ser uma URL."),
 
     ];
 };
